@@ -32,7 +32,7 @@ function Todo({ todo }) {
             <p
               className="line_break"
               style={{
-                color: isComplete && "red",
+                color: isComplete && "#545150",
                 textDecoration: isComplete && "line-through",
                 // backgroundColor:isComplete && "black"
               }}
