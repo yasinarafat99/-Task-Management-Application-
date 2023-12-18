@@ -2,27 +2,28 @@ import React, { useContext, useState } from "react";
 import { TodoContext } from "../Context/Context";
 
 function Todo({ todo }) {
-  const {task, id} = todo;
-  const [updateInput,setUpdateInput] = useState(task);
+  const { task, id } = todo;
+  const [updateInput, setUpdateInput] = useState(task);
   const { dispatch } = useContext(TodoContext);
   const [isComplete, setIsComplete] = useState(false);
-  const [isEdit, setIsEdit] = useState(false)
+  const [isEdit, setIsEdit] = useState(false);
 
   const dltTodo = (id) => {
     dispatch({ type: "DELETE_TODO", payload: id });
   };
 
-  const updateHandle = ((id) => {
+  const updateHandle = (id) => {
+    if(!updateInput.trim())
+     return alert("Please updat your task")
     setIsEdit(false);
     dispatch({
-      type:"UPDATE_TODO",
-      payload:{
+      type: "UPDATE_TODO",
+      payload: {
         updateInput,
-        id
-      }
-    })
-
-  })
+        id,
+      },
+    });
+  };
 
   return (
     <div>
@@ -42,19 +43,28 @@ function Todo({ todo }) {
                 name=""
                 id=""
                 onClick={(e) => setIsComplete(e.target.checked)}
-              /> 
-              
-              {
-                !isEdit ?<>{task}</> : <input className="updateInput" type="text" value={updateInput} onChange={(e) => setUpdateInput(e.target.value)} />
-              }
-             {/* {task} */}
+              />
+
+              {!isEdit ? (
+                <>{task}</>
+              ) : (
+                <input
+                  className="updateInput"
+                  type="text"
+                  value={updateInput}
+                  onChange={(e) => setUpdateInput(e.target.value)}
+                  // required
+                />
+              )}
+              {/* {task} */}
             </p>
           </div>
           <div className="btn">
-            
-            {
-              !isEdit ?<button onClick={()=> setIsEdit(true)}>Edit</button>:<button onClick={()=>updateHandle(id) }>Update</button>
-            }
+            {!isEdit ? (
+              <button onClick={() => setIsEdit(true)}>Edit</button>
+            ) : (
+              <button onClick={() => updateHandle(id)}>Update</button>
+            )}
             <button className="btn-btndlt" onClick={() => dltTodo(id)}>
               Delete
             </button>

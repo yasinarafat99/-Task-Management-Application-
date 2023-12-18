@@ -14,7 +14,7 @@ body {
 }
 .main {
   display: flex;
-  margin: 100px auto 0;
+  margin: 50px auto 0;
   background: #6c5f5a;
 
   /* background-color: #6e564b; */
@@ -25,6 +25,11 @@ body {
   flex-direction: column;
   border-radius: 10px;
   padding: 15px;
+  /*  */
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 /* .main{
 	overflow-y: scroll;
@@ -53,7 +58,8 @@ input[type="checkbox"] {
 }
 .inputBox input {
   padding: 10px;
-  width: 50vh;
+  /* width: 50vh; */
+  width: 405px;
   border-radius: 10px;
   border: 1px solid #3d3e3f;
   font-size: 18px;
@@ -108,7 +114,7 @@ p.line_break {
 }
 .updateInput{
   padding: 10px;
-  width: 50vh;
+  /* width: 50vh; */
   border-radius: 10px;
   border: 1px solid #3d3e3f;
   font-size: 18px;
