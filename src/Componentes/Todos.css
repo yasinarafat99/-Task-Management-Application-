@@ -3,37 +3,22 @@
   padding: 0;
 }
 body {
-  /* height: 100vh;
-	justify-content: center;
-	align-items: center; */
-  /* display: flex;
-	margin:100px  auto 0;
-	background: #6c5f5a; */
-  /* background: #1D2A35; */
   background: #171921;
 }
 .main {
   display: flex;
   margin: 50px auto 0;
   background: #6c5f5a;
-
-  /* background-color: #6e564b; */
-  /* background-color:#928e8e; */
   max-width: 550px;
-  /* height: 550px; */
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   padding: 15px;
-  /*  */
-
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-/* .main{
-	overflow-y: scroll;
-} */
+
 
 .inputBox {
   display: flex;
@@ -48,7 +33,6 @@ body {
 .todoFlex {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* display: flex; */
   gap: 16rem;
   align-items: center;
 }
@@ -58,19 +42,15 @@ input[type="checkbox"] {
 }
 .inputBox input {
   padding: 10px;
-  /* width: 50vh; */
   width: 405px;
   border-radius: 10px;
   border: 1px solid #3d3e3f;
   font-size: 18px;
-  /* transition: border 250ms ease-out; */
 }
 .input_flex {
   display: flex;
-  /* justify-content: space-around; */
 }
 .addBtn {
-  /* margin-right:10px; */
   margin-left: 10px;
   font-size: 20px;
 }
@@ -101,6 +81,7 @@ button:focus {
   padding: 10px 18px;
 }
 .line_break {
+  width: 350px;
   line-break: anywhere;
   font-size: 20px;
   font-weight: 600;
@@ -114,12 +95,36 @@ p.line_break {
 }
 .updateInput{
   padding: 10px;
-  /* width: 50vh; */
   border-radius: 10px;
   border: 1px solid #3d3e3f;
   font-size: 18px;
-  /* transition: border 250ms ease-out; */
 }
-/* .showTask{
-	color: #fff;
-} */
+
+
+
+
+@media screen and (max-width: 600px) {
+  .main {
+    max-width: 90%; 
+  }
+
+  .todoFlex {
+    gap: 10px; 
+  }
+
+  .addBtn,
+  button {
+    width: 100%; 
+  }
+
+  .inputBox input,
+  .updateInput {
+    width: calc(100% - 20px); 
+}
+.line_break {
+  width: 150px;
+  /* line-break: anywhere;
+  font-size: 20px;
+  font-weight: 600; */
+}
+}

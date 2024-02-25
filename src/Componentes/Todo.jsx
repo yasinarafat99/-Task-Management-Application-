@@ -1,3 +1,4 @@
+
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../Context/Context";
 
@@ -35,7 +36,6 @@ function Todo({ todo }) {
               style={{
                 color: isComplete && "#545150",
                 textDecoration: isComplete && "line-through",
-                // backgroundColor:isComplete && "black"
               }}
             >
               <input
